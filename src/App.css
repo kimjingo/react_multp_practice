@@ -1,3 +1,11 @@
+* {
+  font-size: 30px;
+}
+
+input {
+  width:auto;
+}
+
 .App {
   text-align: center;
 }
@@ -47,4 +55,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.wrong {
+  color:red;
+}
+
+.correct{
+  color:blue;
 }

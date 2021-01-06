@@ -13,6 +13,7 @@ class Gugudan extends React.Component {
       value: '',
       result: '',
       history: [],
+      resultStyle: '',
     };
   }
 
@@ -23,16 +24,19 @@ class Gugudan extends React.Component {
     // this.setState( { history : history } ) ;
 
     if(parseInt(this.state.value) === this.state.first * this.state.second) {
+
       this.setState({
         result: 'Correct',
         first: Math.ceil(Math.random() * 9),
         second: Math.ceil(Math.random() * 9),
         value: '',
+        resultStyle: 'blue',
       });
     }else{
       this.setState({
         result: 'Wrong',
         value: '',
+        resultStyle: 'red',
       });
     }
   };
@@ -73,7 +77,7 @@ class Gugudan extends React.Component {
           <input type="number" name="youranswer" value={this.state.value} autofocus="true" onChange={this.onChange} />
           <button>Submit</button>
         </form>
-        <div>Result : {this.state.result}</div>
+        <div id='result' style={{color:this.state.resultStyle}} >Result : {this.state.result}</div>
         {/* <ol> {moves} </ol> */}
       </div>
     );
