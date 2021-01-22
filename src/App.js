@@ -4,7 +4,7 @@ import './App.css';
 import Option from './components/Option';
 // import Answer from './components/Answer';
 // import History from './components/History';
-// import Problem from './components/Problem';
+import Problem from './components/Problem';
 
 
 class App extends Component {
@@ -19,7 +19,8 @@ class App extends Component {
     return (
       <div className="App">
         <Option option={this.state.option} onChangeOption={function(opt){this.setState({option:opt})}.bind(this)}></Option>
-        {/* <Problem></Problem>
+        <Problem option={this.state.option}></Problem>
+        {/* 
         <Answer></Answer>
         <History></History> */}
 
