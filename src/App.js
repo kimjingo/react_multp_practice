@@ -1,39 +1,31 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Option from './components/Option';
+// import Answer from './components/Answer';
+// import History from './components/History';
+// import Problem from './components/Problem';
 
-function App() {
-  return (
-    <div className="App">
-      <form>
-        <div>
-          <input type="radio" name="problemtype" id="nine" value='9' checked/>
-          <label for="nine">9 x 9</label>
-          <input type="radio" name="problemtype" id="nineteen" value='19' />
-          <label for="nineteen">19 x 19</label>
-        </div>
-        <hr></hr>
 
-        <div>9 x 9 = ?</div>
-        <input type="number" name="youranswer" autofocus="true" />
-        <button>Submit</button>
-        <div>Result : </div>
-      </form>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {	// state 설정
+      option : 9, // or 19
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Option option={this.state.option} onChangeOption={function(opt){this.setState({option:opt})}.bind(this)}></Option>
+        {/* <Problem></Problem>
+        <Answer></Answer>
+        <History></History> */}
+
+      </div>
+    );
+  }
 }
 
 export default App;
