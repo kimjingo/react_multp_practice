@@ -5,10 +5,16 @@ class Answer extends Component {
     console.log('Answer render');
 
     return (
-        // <form onSubmit={this.onSubmit}>
-        //   <input type="number" name="youranswer" value={this.state.value} autofocus="true" onChange={this.onChange} />
-        //   <button>Submit</button>
-        // </form>
+        <form onSubmit={function(e){
+          // debugger;
+          e.preventDefault();
+          console.log(e.target.yoursanswer.value);
+          this.props.onSubmit( e.target.yoursanswer.value );
+          debugger;
+        }.bind(this)}>
+          <input type="number" name="youranswer" value="0" autoFocus={true} />
+          <button>Submit</button>
+        </form>
 
     )
   }

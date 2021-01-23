@@ -49,9 +49,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Option option={this.state.option} onChangePage={function(opt){this.setState({option:opt})}.bind(this)}></Option>
+        <Option option={this.state.option} onChangeOption={function(opt){this.setState({option:opt})}.bind(this)}></Option>
         <Problem></Problem>
-        <Answer></Answer>
+        <Answer updateAnwer={function(e){console.log(e)}.bind(this)}></Answer>
         <History></History>
 
       </div>
